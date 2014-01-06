@@ -39,7 +39,7 @@
 
                     <var id="PLACES">
                         (function() {
-                            var places = placesLeftOfDecimal.slice( 0, 4 );
+                            var places = placesLeftOfDecimal.slice( 0, LENGTH );
                             return $.map( places, function( place, i ) {
                                 return place + "s";
                             });
@@ -93,7 +93,7 @@
                                 } else {
                                     var words = Cardinal( digit ) + " " + powerToPlace(maxPower - index);
                                     var placeValue = pow(10, maxPower - index);
-.push( digit * placeValue);
+                                    ADDENDS.push( digit * placeValue);
                                     return words + " is the same as &lt;code&gt;" +
                                             digit + "\\times" + placeValue + " = " +
                                             (digit * placeValue) + "&lt;/code&gt;";
